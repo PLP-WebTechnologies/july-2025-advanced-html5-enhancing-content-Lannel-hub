@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        fieldset {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+            padding: 15px;
+        }
+        
+        legend {
+            font-weight: bold;
+            color: #555;
+            padding: 0 10px;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,123,255,0.3);
+        }
+        
+        .checkbox-group {
+            margin: 15px 0;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+        
+        .radio-group {
+            margin: 15px 0;
+        }
+        
+        .radio-group input[type="radio"] {
+            width: auto;
+            margin-right: 8px;
+        }
+        
+        .radio-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .reset-btn {
+            background-color: #6c757d;
+        }
+        
+        .reset-btn:hover {
+            background-color: #545b62;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        .required {
+            color: red;
+        }
+        
+        .form-info {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Enhanced HTML5 Form</h1>
+        
+        <div class="form-info">
+            <strong>Form Information:</strong> Please fill out all required fields marked with <span class="required">*</span>
+        </div>
+        
+        <form action="#" method="POST">
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <label for="firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required autocomplete="given-name">
+                
+                <label for="lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required autocomplete="family-name">
+                
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required autocomplete="email">
+                
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" autocomplete="tel">
+                
+                <label for="birthdate">Date of Birth</label>
+                <input type="date" id="birthdate" name="birthdate">
+                
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="13" max="120" placeholder="Enter your age">
+            </fieldset>
+            
+            <fieldset>
+                <legend>Address Information</legend>
+                
+                <label for="address">Street Address</label>
+                <input type="text" id="address" name="address" placeholder="123 Main Street" autocomplete="street-address">
+                
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Your city" autocomplete="address-level2">
+                
+                <label for="state">State/Province</label>
+                <select id="state" name="state">
+                    <option value="">Select a state</option>
+                    <option value="AL">Alabama</option>
+                    <option value="CA">California</option>
+                    <option value="FL">Florida</option>
+                    <option value="NY">New York</option>
+                    <option value="TX">Texas</option>
+                    <option value="other">Other</option>
+                </select>
+                
+                <label for="zipcode">ZIP Code</label>
+                <input type="text" id="zipcode" name="zipcode" placeholder="12345" pattern="[0-9]{5}(-[0-9]{4})?" autocomplete="postal-code">
+                
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="US" selected>United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="other">Other</option>
+                </select>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Preferences</legend>
+                
+                <label for="website">Personal Website</label>
+                <input type="url" id="website" name="website" placeholder="https://example.com">
+                
+                <div class="radio-group">
+                    <label>Gender:</label>
+                    <div class="radio-item">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="other-gender" name="gender" value="other">
+                        <label for="other-gender">Other</label>
+                    </div>
+                </div>
+                
+                <div class="checkbox-group">
+                    <label>Interests (select all that apply):</label>
+                    <div>
+                        <input type="checkbox" id="sports" name="interests" value="sports">
+                        <label for="sports">Sports</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="music" name="interests" value="music">
+                        <label for="music">Music</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="technology" name="interests" value="technology">
+                        <label for="technology">Technology</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="travel" name="interests" value="travel">
+                        <label for="travel">Travel</label>
+                    </div>
+                </div>
+                
+                <label for="favoriteColor">Favorite Color</label>
+                <input type="color" id="favoriteColor" name="favoriteColor" value="#ff0000">
+                
+                <label for="experience">Experience Level</label>
+                <input type="range" id="experience" name="experience" min="1" max="10" value="5">
+                <small>1 (Beginner) to 10 (Expert)</small>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Additional Information</legend>
+                
+                <label for="resume">Upload Resume (PDF only)</label>
+                <input type="file" id="resume" name="resume" accept=".pdf">
+                
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Any additional comments or information..." readonly></textarea>
+                
+                <label for="password">Create Password <span class="required">*</span></label>
+                <input type="password" id="password" name="password" placeholder="Enter a secure password" required minlength="8">
+                
+                <label for="hidden-field">Hidden Field</label>
+                <input type="hidden" id="hidden-field" name="hiddenValue" value="form-submission-2024">
+            </fieldset>
+            
+            <!-- Sample Table with Course Information -->
+            <table>
+                <caption><strong>Sample Course Schedule</strong></caption>
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Credits</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CS101</td>
+                        <td>Introduction to Programming</td>
+                        <td>3</td>
+                        <td>MWF 9:00-10:00</td>
+                    </tr>
+                    <tr>
+                        <td>CS201</td>
+                        <td>Data Structures</td>
+                        <td>4</td>
+                        <td>TTh 11:00-12:30</td>
+                    </tr>
+                    <tr>
+                        <td>CS301</td>
+                        <td>Web Development</td>
+                        <td>3</td>
+                        <td>MWF 2:00-3:00</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Media Elements -->
+            <div style="margin: 20px 0;">
+                <h3>Media Elements</h3>
+                <audio controls>
+                    <source src="sample-audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <video width="300" height="200" controls style="margin-top: 10px;">
+                    <source src="sample-video.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+            </div>
+            
+            <!-- Ordered and Unordered Lists -->
+            <div style="margin: 20px 0;">
+                <h3>Form Requirements Checklist</h3>
+                <ul>
+                    <li>Well-structured content using lists, tables, and media</li>
+                    <li>Complete HTML5 form with variety of input fields</li>
+                    <li>Proper form attributes (placeholder, required, autocomplete, readonly)</li>
+                    <li>HTML5 validation features</li>
+                    <li>Clear, accessible layout using semantic tags</li>
+                </ul>
+                
+                <h4>Steps to Complete Assignment:</h4>
+                <ol>
+                    <li>Navigate to the classroom GitHub repository</li>
+                    <li>Read through the instructions in the README file</li>
+                    <li>Attempt the instructions</li>
+                    <li>Push your changes</li>
+                </ol>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button type="submit">Submit Form</button>
+                <button type="reset" class="reset-btn">Reset Form</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
